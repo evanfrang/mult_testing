@@ -1,14 +1,21 @@
-# Statistics Tinkering
-Evan Frangipane
-
-- [Multiple Testing Problem](#multiple-testing-problem)
+---
+title: "Statistics Tinkering"
+author: "Evan Frangipane"
+format:
+  gfm:
+    code-fold: true
+    toc: true
+    toc-location: right
+execute:
+  cache: true
+jupyter: python3
+---
 
 ## Multiple Testing Problem
 
-<details class="code-fold">
-<summary>Code</summary>
-
-``` python
+```{python}
+#| cache: true
+#| 
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -58,18 +65,13 @@ plt.title('Family-Wise Error Rate vs. Number of Tests')
 plt.legend()
 plt.grid()
 plt.show()
+
 ```
-
-</details>
-
-![](README_files/figure-commonmark/cell-2-output-1.png)
 
 fdkhfkdjsfhsd
 
-<details class="code-fold">
-<summary>Code</summary>
 
-``` python
+```{python}
 ubound_fwer_bonferroni = 1 - (1 - 0.05/ubound_tests)**ubound_tests
 
 plt.plot(ubound_tests, ubound_fwer_bonferroni, label='FWER Estimate', color='blue')
@@ -85,16 +87,9 @@ plt.grid()
 plt.show()
 ```
 
-</details>
-
-![](README_files/figure-commonmark/cell-3-output-1.png)
-
 fdfdfdfdfdf
 
-<details class="code-fold">
-<summary>Code</summary>
-
-``` python
+```{python}
 Ms = np.logspace(np.log(3),np.log(500),5000).astype(int)
 bins = [binom(i,P) for i in Ms]
 crits = [int(i.ppf(0.05 / 2)-1.) for i in bins]
@@ -118,7 +113,3 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-
-</details>
-
-![](README_files/figure-commonmark/cell-4-output-1.png)
