@@ -6,8 +6,10 @@ format:
     code-fold: true
     toc: true
     toc-location: right
-    html-math-method: webtex
-    url: https://latex.codecogs.com/png.image?%5Cbg_black&space;
+    #html-math-method: webtex
+    #url: https://latex.codecogs.com/png.image?%5Cbg_black&space;
+    keep-md: true
+    include-in-header: header.html
 execute:
   cache: true
 jupyter: python3
@@ -16,7 +18,8 @@ jupyter: python3
 ## Problem Statement
 The main idea of the multiple testing problem is the more statistical tests we perform during an analysis, the higher our false positive rate (Type I Error), if left uncorrected. 
 Imagine we choose our confidence level to be $95\%$, essentially we are choosing our false positive rate to be $5\%$ for one test. 
-If we test again, the probability of at least one false positive is $1 - (0.95 * 0.95)$. 
+If we test again, the probability of at least one false positive is $1 - (0.95 * 0.95)$.
+
 If we continue testing until $N$, we can rewrite the false positive probablity (at least one) as $1 - (1-0.05)^N$. 
 This probability is called the family-wise error rate (FWER). As $N$ increases, the FWER increases to probability of $1$. 
 If we allow this problem to get out of hand, we could be making false inferences.
