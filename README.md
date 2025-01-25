@@ -218,11 +218,7 @@ This comes from taking the Taylor Expansion of the FWER equation with
 small parameter
 ![\alpha](https://latex.codecogs.com/svg.latex?%5Calpha "\alpha").
 
-![\begin{centering}
-1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\*\alpha + \mathcal{O}(\alpha^2)) = N\*\alpha + \mathcal{O}(\alpha^2)
-\end{centering}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bcentering%7D%0A1%20-%20%281%20-%20%5Calpha%29%5EN%20%5Crightarrow%201%20-%20%281%20-%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29%29%20%3D%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29%0A%5Cend%7Bcentering%7D "\begin{centering}
-1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)
-\end{centering}")
+![1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\*\alpha + \mathcal{O}(\alpha^2)) = N\*\alpha + \mathcal{O}(\alpha^2)](https://latex.codecogs.com/svg.latex?1%20-%20%281%20-%20%5Calpha%29%5EN%20%5Crightarrow%201%20-%20%281%20-%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29%29%20%3D%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29 "1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)")
 
 Given this expansion, a natural redefinition of
 ![\alpha](https://latex.codecogs.com/svg.latex?%5Calpha "\alpha") is

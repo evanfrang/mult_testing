@@ -126,9 +126,7 @@ A simple solution to this problem is to scale our choice of $\alpha$ for each te
 This comes from taking the Taylor Expansion of the FWER equation with small parameter $\alpha$. 
 
 $$
-\begin{centering}
 1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)
-\end{centering}
 $$
 
 Given this expansion, a natural redefinition of $\alpha$ is $\alpha = \alpha / N$ such that the first term in the expansion is our new $\alpha = 0.05$.
