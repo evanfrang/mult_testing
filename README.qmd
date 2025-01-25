@@ -32,7 +32,7 @@ Some parameters:
 + $N$ - number of tests performed
 + $NN = 10000$ - number of repetitions of each analysis
 
-So, the total number of coins flipped in each analysis is $M * N * NN$.
+So, the total number of coins flipped in each analysis is $M \cdot N \cdot NN$.
 We choose $M = \{18, 51, 120\}$, and $N \in [1, 1000]$ for the following plots.
 
 ```{python}
@@ -147,7 +147,7 @@ The simplest correction is the Bonferroni correction, which is simply $\alpha \r
 This comes from taking the Taylor Expansion of the FWER equation with small parameter $\alpha$. 
 
 $$
-1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)
+1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\cdot\alpha + \mathcal{O}(\alpha^2)) = N\cdot\alpha + \mathcal{O}(\alpha^2)
 $$
 
 Given this expansion, a natural redefinition of $\alpha$ is $\alpha = \alpha / N$ such that the first term in the expansion is our new $\alpha = 0.05$.

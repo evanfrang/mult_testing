@@ -44,7 +44,7 @@ from the number of tails. Some parameters:
   number of repetitions of each analysis
 
 So, the total number of coins flipped in each analysis is
-![M \* N \* NN](https://latex.codecogs.com/svg.latex?M%20%2A%20N%20%2A%20NN "M * N * NN").
+![M \cdot N \cdot NN](https://latex.codecogs.com/svg.latex?M%20%5Ccdot%20N%20%5Ccdot%20NN "M \cdot N \cdot NN").
 We choose
 ![M = \\18, 51, 120\\](https://latex.codecogs.com/svg.latex?M%20%3D%20%5C%7B18%2C%2051%2C%20120%5C%7D "M = \{18, 51, 120\}"),
 and
@@ -215,7 +215,7 @@ This comes from taking the Taylor Expansion of the FWER equation with
 small parameter
 ![\alpha](https://latex.codecogs.com/svg.latex?%5Calpha "\alpha").
 
-![1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\*\alpha + \mathcal{O}(\alpha^2)) = N\*\alpha + \mathcal{O}(\alpha^2)](https://latex.codecogs.com/svg.latex?1%20-%20%281%20-%20%5Calpha%29%5EN%20%5Crightarrow%201%20-%20%281%20-%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29%29%20%3D%20N%2A%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29 "1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)")
+![1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\cdot\alpha + \mathcal{O}(\alpha^2)) = N\cdot\alpha + \mathcal{O}(\alpha^2)](https://latex.codecogs.com/svg.latex?1%20-%20%281%20-%20%5Calpha%29%5EN%20%5Crightarrow%201%20-%20%281%20-%20N%5Ccdot%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29%29%20%3D%20N%5Ccdot%5Calpha%20%2B%20%5Cmathcal%7BO%7D%28%5Calpha%5E2%29 "1 - (1 - \alpha)^N \rightarrow 1 - (1 - N\cdot\alpha + \mathcal{O}(\alpha^2)) = N\cdot\alpha + \mathcal{O}(\alpha^2)")
 
 Given this expansion, a natural redefinition of
 ![\alpha](https://latex.codecogs.com/svg.latex?%5Calpha "\alpha") is
