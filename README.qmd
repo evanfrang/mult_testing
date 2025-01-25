@@ -118,7 +118,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Correcting $\alpha$
+## Correcting Significance
 
 A simple solution to this problem is to scale our choice of $\alpha$ for each test by the number of tests. The simplest correction is the Bonferroni correction, which is simply $\alpha \rightarrow \alpha/N$.
 This comes from taking the Taylor Expansion of the FWER equation with small parameter $\alpha$. 

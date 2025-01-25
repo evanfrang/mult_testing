@@ -4,7 +4,7 @@ Evan Frangipane
 - [Problem Statement](#problem-statement)
 - [Outlining the Simulation](#outlining-the-simulation)
 - [Discrepancy in FWER](#discrepancy-in-fwer)
-- [Correcting $\alpha$](#correcting-alpha)
+- [Correcting Significance](#correcting-significance)
 
 ## Problem Statement
 
@@ -175,7 +175,7 @@ Figure 2: Critical p-value
 
 </div>
 
-## Correcting $\alpha$
+## Correcting Significance
 
 A simple solution to this problem is to scale our choice of $\alpha$ for
 each test by the number of tests. The simplest correction is the
