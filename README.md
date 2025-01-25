@@ -6,6 +6,27 @@ Evan Frangipane
 - [Discrepancy in FWER](#discrepancy-in-fwer)
 - [Correcting $\alpha$](#correcting-alpha)
 
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
 ## Problem Statement
 
 The main idea of the multiple testing problem is the more statistical
@@ -184,10 +205,10 @@ A simple solution to this problem is to scale our choice of $\alpha$ for
 each test by the number of tests. The simplest correction is the
 Bonferroni correction, which is simply $\alpha \rightarrow \alpha/N$.
 This comes from taking the Taylor Expansion of the FWER equation with
-small parameter $\alpha$. $$
-\begin{equation}
+small parameter $\alpha$.
+
+$$
 1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)
-\end{equation}
 $$
 
 Given this expansion, a natural redefinition of $\alpha$ is
