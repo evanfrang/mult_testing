@@ -185,7 +185,9 @@ each test by the number of tests. The simplest correction is the
 Bonferroni correction, which is simply $\alpha \rightarrow \alpha/N$.
 This comes from taking the Taylor Expansion of the FWER equation with
 small parameter $\alpha$. $$
+\begin{equation}
 1 - (1 - \alpha)^N \rightarrow 1 - (1 - N*\alpha + \mathcal{O}(\alpha^2)) = N*\alpha + \mathcal{O}(\alpha^2)
+\end{equation}
 $$
 
 Given this expansion, a natural redefinition of $\alpha$ is
