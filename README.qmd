@@ -130,7 +130,7 @@ $$
 Given this expansion, a natural redefinition of $\alpha$ is $\alpha = \alpha / N$ such that the first term in the expansion is our new $\alpha = 0.05$.
 This redefinition bounds the FWER to $0.05$ rather than asymptoting to $1$.
 Now the entire analysis has a significance of $0.05$, while each individual test has a smaller significance scaled by the number of tests.
-Now, we redo the analysis with our new significance to confirm that FWER is around or less than $0.05$. This can be seen in @fig-fwer-bon. Notice that there is no clear hierarchy between the three choices of $M$, this can be explained by @fig-crit again. But this time because $\alpha$ depends on $N$, the critical p-values will vary with $N$ and thus the hierarchy will vary.
+Now, we redo the analysis with our new significance to confirm that FWER is around or less than $0.05$. This can be seen in @fig-fwer-bon. Notice that there is no clear hierarchy between the three choices of $M$, this can be explained by @fig-crit again, where this time because $\alpha$ depends on $N$, the critical p-values will vary with $N$ and thus the hierarchy will vary.
 
 ```{python}
 #| label: fig-fwer-bon

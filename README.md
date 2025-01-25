@@ -197,7 +197,7 @@ to confirm that FWER is around or less than $0.05$. This can be seen in
 <a href="#fig-fwer-bon" class="quarto-xref">Figure 3</a>. Notice that
 there is no clear hierarchy between the three choices of $M$, this can
 be explained by <a href="#fig-crit" class="quarto-xref">Figure 2</a>
-again. But this time because $\alpha$ depends on $N$, the critical
+again, where this time because $\alpha$ depends on $N$, the critical
 p-values will vary with $N$ and thus the hierarchy will vary.
 
 <details class="code-fold">
