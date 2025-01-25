@@ -16,7 +16,7 @@ level to be
 essentially we are choosing our false positive rate to be
 ![5\\](https://latex.codecogs.com/svg.latex?5%5C%25 "5\%") for one test.
 If we test again, the probability of at least one false positive is
-![1 - (0.95 \* 0.95)](https://latex.codecogs.com/svg.latex?1%20-%20%280.95%20%2A%200.95%29 "1 - (0.95 * 0.95)").
+![1 - (0.95 \cdot 0.95)](https://latex.codecogs.com/svg.latex?1%20-%20%280.95%20%5Ccdot%200.95%29 "1 - (0.95 \cdot 0.95)").
 
 If we continue testing until
 ![N](https://latex.codecogs.com/svg.latex?N "N"), we can rewrite the
