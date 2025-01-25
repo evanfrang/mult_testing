@@ -6,12 +6,14 @@ Evan Frangipane
 - [Discrepancy in FWER](#discrepancy-in-fwer)
 - [Correcting Significance](#correcting-significance)
 
+<link rel="stylesheet" href="cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
 ## Problem Statement
 
 The main idea of the multiple testing problem is the more statistical
 tests we perform during an analysis, the higher our false positive rate
 (Type I Error), if left uncorrected. Imagine we choose our confidence
-level to be $95$%, essentially we are choosing our false positive rate
+level to be $95\%$, essentially we are choosing our false positive rate
 to be $5\%$ for one test. If we test again, the probability of at least
 one false positive is $1 - (0.95 * 0.95)$. If we continue testing until
 $N$, we can rewrite the false positive probablity (at least one) as

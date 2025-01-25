@@ -12,11 +12,20 @@ execute:
 jupyter: python3
 ---
 
+<link rel="stylesheet" href="cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
 ## Problem Statement
-The main idea of the multiple testing problem is the more statistical tests we perform during an analysis, the higher our false positive rate (Type I Error), if left uncorrected. Imagine we choose our confidence level to be $95$%, essentially we are choosing our false positive rate to be $5$% for one test. If we test again, the probability of at least one false positive is $1 - (0.95 * 0.95)$. If we continue testing until $N$, we can rewrite the false positive probablity (at least one) as $1 - (1-0.05)^N$. This probability is called the family-wise error rate (FWER). As $N$ increases, the FWER increases to probability of $1$. If we allow this problem to get out of hand, we could be making false inferences.
+The main idea of the multiple testing problem is the more statistical tests we perform during an analysis, the higher our false positive rate (Type I Error), if left uncorrected. 
+Imagine we choose our confidence level to be $95\%$, essentially we are choosing our false positive rate to be $5\%$ for one test. 
+If we test again, the probability of at least one false positive is $1 - (0.95 * 0.95)$. 
+If we continue testing until $N$, we can rewrite the false positive probablity (at least one) as $1 - (1-0.05)^N$. 
+This probability is called the family-wise error rate (FWER). As $N$ increases, the FWER increases to probability of $1$. 
+If we allow this problem to get out of hand, we could be making false inferences.
 
 ## Outlining the Simulation
-For our simulation we will be flipping fair coins. We are doing a two-tailed test to see if the number of heads is significantly different from the number of tails. Some parameters:
+For our simulation we will be flipping fair coins. 
+We are doing a two-tailed test to see if the number of heads is significantly different from the number of tails. 
+Some parameters:
 
 + $M$ - number of coins being flipped in each test
 + $\alpha = 0.05$ - significance for each test
@@ -24,7 +33,7 @@ For our simulation we will be flipping fair coins. We are doing a two-tailed tes
 + $NN = 10000$ - number of repetitions of each analysis
 
 So, the total number of coins flipped in each analysis is $M * N * NN$.
-We choose $M = 18, 51, 120$, and $N \in [1, 1000]$ for the following plots.
+We choose $M = \{18, 51, 120\}$, and $N \in [1, 1000]$ for the following plots.
 
 ```{python}
 import numpy as np
@@ -54,7 +63,11 @@ with open('fwer.pkl', 'rb') as f:
     pvs, index = pickle.load(f)
 ```
 
-We plot the results of our analyses in @fig-fwer. The false positive rate (FWER) increases toward $1$ with $N$. The three choices of $M$ are plotted along with the analytical curve. There is a discrepancy between the analytical curve and the numerical simulations that is smallest for $M = 51$. We will return to this in the next section. The relevant feature is the monotonic increase in Type I Error.
+We plot the results of our analyses in @fig-fwer. 
+The false positive rate (FWER) increases toward $1$ with $N$. 
+The three choices of $M$ are plotted along with the analytical curve. 
+There is a discrepancy between the analytical curve and the numerical simulations that is smallest for $M = 51$. 
+We will return to this in the next section. The relevant feature is the monotonic increase in Type I Error.
 
 ```{python}
 #| label: fig-fwer
@@ -87,7 +100,16 @@ plt.show()
 
 ## Discrepancy in FWER 
 
-Our $\alpha$ significance was chosen to be $0.05$ for this analysis. However, when we are dealing with coin flips we are using discrete data and not continuous. This has consequences for what constitutes a significant result for flipping $M$ coins. For a significant result we need the p-value of the number of heads (or tails hence two-tail test) to be the largest number less than $\alpha = 0.05$. We call this number of heads the critical number of heads. However, due to discrete data, the critical p-value can vary greatly rather than being exactly $0.05$. One would expect that as the number of coin flips increases, the critical p-value should approach $0.05$. The intuition being as we increase the number of coins flipped we are filling in the discrete data set and approaching continuum. We plot the critical p-value for increasing $M$ coin flips in @fig-crit. Additionally, we also plot the three $M$ values from the previous simulation and they show the same hierarchy as seen in @fig-fwer. The closer the critical p-value is to $0.05$, the closer the FWER is to $1 - (1 - \alpha)^N$.
+Our $\alpha$ significance was chosen to be $0.05$ for this analysis. 
+However, when we are dealing with coin flips we are using discrete data and not continuous. 
+This has consequences for what constitutes a significant result for flipping $M$ coins. 
+For a significant result we need the p-value of the number of heads (or tails hence two-tail test) to be the largest number less than $\alpha = 0.05$.
+We call this number of heads the critical number of heads. However, due to discrete data, the critical p-value can vary greatly rather than being exactly $0.05$. 
+One would expect that as the number of coin flips increases, the critical p-value should approach $0.05$. 
+The intuition being as we increase the number of coins flipped we are filling in the discrete data set and approaching continuum. 
+We plot the critical p-value for increasing $M$ coin flips in @fig-crit. 
+Additionally, we also plot the three $M$ values from the previous simulation and they show the same hierarchy as seen in @fig-fwer. 
+The closer the critical p-value is to $0.05$, the closer the FWER is to $1 - (1 - \alpha)^N$.
 
 ```{python}
 #| label: fig-crit
@@ -120,7 +142,8 @@ plt.show()
 
 ## Correcting Significance
 
-A simple solution to this problem is to scale our choice of $\alpha$ for each test by the number of tests. The simplest correction is the Bonferroni correction, which is simply $\alpha \rightarrow \alpha/N$.
+A simple solution to this problem is to scale our choice of $\alpha$ for each test by the number of tests. 
+The simplest correction is the Bonferroni correction, which is simply $\alpha \rightarrow \alpha/N$.
 This comes from taking the Taylor Expansion of the FWER equation with small parameter $\alpha$. 
 
 $$
@@ -130,7 +153,9 @@ $$
 Given this expansion, a natural redefinition of $\alpha$ is $\alpha = \alpha / N$ such that the first term in the expansion is our new $\alpha = 0.05$.
 This redefinition bounds the FWER to $0.05$ rather than asymptoting to $1$.
 Now the entire analysis has a significance of $0.05$, while each individual test has a smaller significance scaled by the number of tests.
-Now, we redo the analysis with our new significance to confirm that FWER is around or less than $0.05$. This can be seen in @fig-fwer-bon. Notice that there is no clear hierarchy between the three choices of $M$, this can be explained by @fig-crit again, where this time because $\alpha$ depends on $N$, the critical p-values will vary with $N$ and thus the hierarchy will vary.
+Now, we redo the analysis with our new significance to confirm that FWER is around or less than $0.05$. 
+This can be seen in @fig-fwer-bon. 
+Notice that there is no clear hierarchy between the three choices of $M$, this can be explained by @fig-crit again, where this time because $\alpha$ depends on $N$, the critical p-values will vary with $N$ and thus the hierarchy will vary.
 
 ```{python}
 #| label: fig-fwer-bon
