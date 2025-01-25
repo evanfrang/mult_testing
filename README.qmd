@@ -17,9 +17,7 @@ The main idea of the multiple testing problem is the more statistical tests we p
 
 ## Outlining the Simulation
 For our simulation we will be flipping fair coins. We are doing a two-tailed test to see if the number of heads is significantly different from the number of tails. Some parameters:
-<style type="text/css">
-    ul ;
-</style>
+
 + $M$ - number of coins being flipped in each test
 + $\alpha = 0.05$ - significance for each test
 + $N$ - number of tests performed
