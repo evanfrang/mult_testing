@@ -6,7 +6,7 @@ format:
     code-fold: true
     toc: true
     toc-location: right
-    html-math-method: plain
+    html-math-method: gladtex
 execute:
   cache: true
 jupyter: python3
