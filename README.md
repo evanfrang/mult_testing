@@ -1,17 +1,23 @@
-# Multiple Testing Problem
+# Multiple Testing Problem in Statistics
 Evan Frangipane
 
-- [Problem Statement](#problem-statement)
+- [Abstract](#abstract)
+- [What is the Multiple Testing
+  Problem?](#what-is-the-multiple-testing-problem)
 - [Outlining the Simulation](#outlining-the-simulation)
 - [Discrepancy in FWER](#discrepancy-in-fwer)
 - [Correcting Significance](#correcting-significance)
 
-## Problem Statement
+## Abstract
+
+In this article I will describe the multiple testing problem, simulate a
+simple example, and outline a solution called the Bonferroni correction.
+
+## What is the Multiple Testing Problem?
 
 The main idea of the multiple testing problem is the more statistical
 tests we perform during an analysis, the higher our false positive rate
-(Type I Error), if left uncorrected. Imagine we choose our confidence
-level to be
+(Type I Error). Imagine we choose our confidence level to be
 ![95\\](https://latex.codecogs.com/svg.latex?95%5C%25 "95\%"),
 essentially we are choosing our false positive rate to be
 ![5\\](https://latex.codecogs.com/svg.latex?5%5C%25 "5\%") for one test.
@@ -181,7 +187,7 @@ plt.plot([Ms[index[1]]], [pvs[index[1]]], '^', label=labels[1], \
 plt.plot([Ms[index[2]]], [pvs[index[2]]], 's', label=labels[2], \
     color='teal', markersize=8, zorder=2)
 ax.set_xscale('log')
-ax.set_xlabel('M')
+ax.set_xlabel('Number of Coin Flips (M)')
 ax.set_ylabel('p-value')
 #plt.title('p-value of Critical Integer $(p_{\\text{crit}}< \\alpha)$')
 ax.legend(loc='lower right', frameon=True, shadow=True, borderpad=1)

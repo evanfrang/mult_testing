@@ -1,5 +1,5 @@
 ---
-title: "Multiple Testing Problem"
+title: "Multiple Testing Problem in Statistics"
 author: "Evan Frangipane"
 format:
   gfm:
@@ -13,8 +13,12 @@ execute:
 jupyter: python3
 ---
 
-## Problem Statement
-The main idea of the multiple testing problem is the more statistical tests we perform during an analysis, the higher our false positive rate (Type I Error), if left uncorrected. 
+## Abstract
+
+In this article I will describe the multiple testing problem, simulate a simple example, and outline a solution called the Bonferroni correction.
+
+## What is the Multiple Testing Problem? 
+The main idea of the multiple testing problem is the more statistical tests we perform during an analysis, the higher our false positive rate (Type I Error).
 Imagine we choose our confidence level to be $95\%$, essentially we are choosing our false positive rate to be $5\%$ for one test. 
 If we test again, the probability of at least one false positive is $1 - (0.95 \cdot 0.95)$.
 
@@ -127,7 +131,7 @@ plt.plot([Ms[index[1]]], [pvs[index[1]]], '^', label=labels[1], \
 plt.plot([Ms[index[2]]], [pvs[index[2]]], 's', label=labels[2], \
     color='teal', markersize=8, zorder=2)
 ax.set_xscale('log')
-ax.set_xlabel('M')
+ax.set_xlabel('Number of Coin Flips (M)')
 ax.set_ylabel('p-value')
 #plt.title('p-value of Critical Integer $(p_{\\text{crit}}< \\alpha)$')
 ax.legend(loc='lower right', frameon=True, shadow=True, borderpad=1)
