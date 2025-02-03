@@ -1,8 +1,3 @@
----
-layout: page 
-title: Multiple Testing 
-order: 4
----
 
 ## Abstract
 
