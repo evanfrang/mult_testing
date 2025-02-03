@@ -1,7 +1,0 @@
-project:
-  output-dir: "_site"
-
-format:
-  html:
-    figure_prefix: "README_files/figure-commonmark/"  # Path where images will be saved
-    output_dir: "_site"
